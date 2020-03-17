@@ -3,6 +3,7 @@ import sys
 
 from mypy.__main__ import main as mypy_main
 
+
 def main(x, stdout, stderr):
     root = '.'
     packages = {}
@@ -17,7 +18,10 @@ def main(x, stdout, stderr):
         if parent in packages.keys():
             packages[pkg_path] = False
 
-    package_roots = [pkg_path for (pkg_path, is_pkg_root) in packages.items() if is_pkg_root]
+    package_roots = [
+        pkg_path for (pkg_path, is_pkg_root)
+        in packages.items() if is_pkg_root
+    ]
 
     cli_args = sys.argv.copy()
 
@@ -34,8 +38,10 @@ def main(x, stdout, stderr):
         stdout.flush()
         mypy_main(x, stdout, stderr)
 
+
 def console_script():
     main(None, sys.stdout, sys.stderr)
+
 
 if __name__ == '__main__':
     main(None, sys.stdout, sys.stderr)

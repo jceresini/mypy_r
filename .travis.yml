@@ -1,0 +1,15 @@
+language: python
+sudo: false
+python:
+  - "3.6"
+script:
+  - pip install flake8
+  - flake8 .
+deploy:
+  provider: pypi
+  user: cleardata
+  password:
+    secure: JCB8PJTZ98LOqMY6ZLwk5FY0kB8srjZEymDlsh7efr8Uds/wrUg4cHT+n4hET/QykGER5DEqfyqWLc2yyKXfUvfru7wYofkY7Bbfx7UiYwoRoPR+pdbxzYGjNEoTTGZQL1L1ERpQMs0SSZfG9Ro7JAs+H6/O3XCL6+QLsTQDrkTmJD6jgS5dLz3LHUXkYQoNbJ7s1PqNwhCn/PLCqGcXBO5h2hMCPj0C/qlyHeyZt1Cydl9Au8qJ8ZcW7gg1JYpsot4z7zBOlYpFpwYZaZb347encNNz8WdVWG4KkglnKRWxFmQiwYs4IjGfOFiC9RbwjrMX+3BnQcFHT+T/HTO3ptedQpO0okJ8CtznPji7a8Z6UV9GbDjoRoHlZxKOKt6XpOjp9ebJru07yuzdNMQ9UB7HIhQinAHk+mNC4u5GEbqOUPgZG5MyqmJoe8WRl1OTgLqnX3C0k7lbvfWchNMnXCk4JUewYNR9A3eL0rMiiNk1v7FvUmpbJOgOID1UPRR8lusH7HjyDX/EM30QSEp8F8zfeA3FKSYjiPQreQla4SGuhVA2Izh+Uz2M3p4X+9v0Z1BYO8T+bk2gKxXmSH/zYsVd5bjOGrV50NQq6xBKtP37zBLMlLFExnn3u+dG8O3khY/0oHdgDQ3R9hnVmVGxVg/ICPUSccqUEb5dq2VkAkY=
+  on:
+    tags: true
+  skip_existing: true

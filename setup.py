@@ -1,8 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='mypy_r',
-    version='1.0',
+    name='mypy-r',
     description='Recursive mypy that find package directories',
     author='Joe Ceresini',
     author_email='joe@ceresini.com',
@@ -15,4 +14,6 @@ setup(
     install_requires=[
         'mypy',
     ],
+    use_scm_version=True,
+    setup_requires=['setuptools_scm'],
 )
